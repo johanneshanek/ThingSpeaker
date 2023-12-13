@@ -1,5 +1,4 @@
-﻿
-Imports System.Net
+﻿Imports System.Net
 
 Public Class ThingSpeaker
 
@@ -16,11 +15,11 @@ Public Class ThingSpeaker
         Next
         Dim request As HttpWebRequest = WebRequest.Create(uri)
         Dim response As HttpWebResponse = request.GetResponse
-        If Not response.StatusCode = HttpStatusCode.OK Then MsgBox(response.StatusDescription)
+        If Not response.StatusCode = HttpStatusCode.OK Then Console.WriteLine(response.StatusDescription)
+        response.Close()
     End Sub
 
     Public Class Channel
-
         Public Number As Integer
         Public Value As Double
 
